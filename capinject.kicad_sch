@@ -2,15 +2,11 @@
 	(version 20250114)
 	(generator "kisch")
 	(generator_version "10.0")
-	(uuid "c9855d3d-220e-41c7-9a97-350e2c228717")
+	(uuid "762bc26d-322e-41b7-8140-746650e7413f")
 	(paper "A3")
 	(title_block
-		(title "Universal ESP32 Button/Signal Bridge")
-		(date "2026-05-29")
+		(title "4x capacitive injection outputs")
 		(rev "0.1")
-		(comment 1 "LOW VOLTAGE ONLY - NOT FOR 230V MAINS SWITCHING")
-		(comment 2 "ESP32-S3-WROOM-1-N8 | SY8089 buck 3.3V | 8 iso-in, 8 PhotoMOS, 2 relay, 4 cap-inject")
-		(comment 3 "Schematic ERC clean before PCB layout.")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
@@ -5658,230 +5654,1723 @@
 				(embedded_fonts no)
 			)
 	)
-	(sheet
-		(at 38 38)
-		(size 40 20)
+	(text "Cap-inject x4. Populate ONE of 100k/470k/1M (default 470k). High-Z to ext touch pad."
+		(exclude_from_sim no)
+		(at 20 15 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "e92836fa-80fb-48c6-82fd-3b13e8224716")
+	)
+	(label "CAP1_OUT"
+		(at 20.32 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dca5d872-d707-4975-ac0e-93d830d1d128")
+	)
+	(label "CAP1_OUT"
+		(at 20.32 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "de1744cc-79c2-4fa7-a773-91a24e61d8ab")
+	)
+	(label "CAP1_OUT"
+		(at 20.32 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "35101051-a3a1-439b-81c8-6067edbf8341")
+	)
+	(label "CAP1_OUT"
+		(at 15.24 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e9ec1325-c5ac-4444-9e2b-026f8aea523b")
+	)
+	(label "CAP1_OUT"
+		(at 49.53 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "60d1a5f0-4cdb-42d7-985a-ff342f76f3f2")
+	)
+	(label "CAP2_OUT"
+		(at 90.17 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8d507282-7c0e-470b-8caa-bd835987de0a")
+	)
+	(label "CAP2_OUT"
+		(at 90.17 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4152cc86-26b4-46c5-a8c7-01df168fb8c4")
+	)
+	(label "CAP2_OUT"
+		(at 90.17 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c16258a7-8f7e-4080-a0e8-4ed66e64e5c8")
+	)
+	(label "CAP2_OUT"
+		(at 85.09 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "822c0821-de1a-4872-8d6c-8ca152c9a5af")
+	)
+	(label "CAP2_OUT"
+		(at 119.38 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1bc6d72e-9b25-43d3-8c49-38aeecf433f0")
+	)
+	(label "CAP3_OUT"
+		(at 160.02 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "04a35d72-2973-4fe7-a702-fbb2d21316e1")
+	)
+	(label "CAP3_OUT"
+		(at 160.02 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a25d8ef7-6987-4481-8d27-744e3c436141")
+	)
+	(label "CAP3_OUT"
+		(at 160.02 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "247a022d-91b5-4e1d-b96c-0cadbbb22d2b")
+	)
+	(label "CAP3_OUT"
+		(at 154.94 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "52435289-d197-43aa-a919-c023d6cdbfdf")
+	)
+	(label "CAP3_OUT"
+		(at 190.5 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "466e098f-0fd6-4a6a-b944-be0c78978ca4")
+	)
+	(label "CAP4_OUT"
+		(at 229.87 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e4f6fd0-9526-45e7-9971-fe265e6dc018")
+	)
+	(label "CAP4_OUT"
+		(at 229.87 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f58e217d-cd2d-4a2b-975a-e2419bfc2a13")
+	)
+	(label "CAP4_OUT"
+		(at 229.87 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "36fc8bfb-1659-458d-bbd9-df35ccbb9ac0")
+	)
+	(label "CAP4_OUT"
+		(at 224.79 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2a915daf-dce8-43f5-adae-b4a5df12a50b")
+	)
+	(label "CAP4_OUT"
+		(at 260.35 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b50790c9-66e2-43cc-b96c-fd9e2da573fd")
+	)
+	(global_label "CAP1"
+		(at 20.32 55.88 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aa419968-642c-48c5-8267-d2ef1b0e7a46")
+	)
+	(global_label "CAP1"
+		(at 20.32 96.52 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5c11b9c-f032-4b7f-af21-a84a6b90af32")
+	)
+	(global_label "CAP1"
+		(at 20.32 135.89 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cfe391d9-a7d0-485f-bed3-a74c7f2881ae")
+	)
+	(global_label "CAP2"
+		(at 90.17 55.88 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "31ca9a08-7941-4391-a8ec-ccce33d312b7")
+	)
+	(global_label "CAP2"
+		(at 90.17 96.52 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1806223e-66f3-4074-b964-5a83fdff0ede")
+	)
+	(global_label "CAP2"
+		(at 90.17 135.89 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "11e26574-f80f-4036-8924-00576c8488c8")
+	)
+	(global_label "CAP3"
+		(at 160.02 55.88 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "09bb3cf9-eac2-41e8-b2d0-2c09cc5a796e")
+	)
+	(global_label "CAP3"
+		(at 160.02 96.52 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "48e3ef99-8d5e-4c65-88eb-fbe7f6341455")
+	)
+	(global_label "CAP3"
+		(at 160.02 135.89 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e65b1a63-398d-47fe-a1c2-49130f90afab")
+	)
+	(global_label "CAP4"
+		(at 229.87 55.88 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "70e165a5-9052-4acf-a54d-ff1b6261f2e9")
+	)
+	(global_label "CAP4"
+		(at 229.87 96.52 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b8e45b75-f0b6-49eb-ab92-c9b8650a191a")
+	)
+	(global_label "CAP4"
+		(at 229.87 135.89 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1f1db449-a33a-4300-98e4-a212830a2853")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 20.32 59.69 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c80b89d1-4218-4f6e-98f5-e72c272d220d")
-		(property "Sheetname" "Power"
-			(at 38 37 0)
+		(uuid "17c00c1f-49b5-4bf1-8bed-11005884e762")
+		(property "Reference" "R44"
+			(at 20.32 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "power.kicad_sch"
-			(at 38 59 0)
+		(property "Value" "100k"
+			(at 20.32 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 20.32 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 20.32 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "66849ee4-0fc1-446b-97d0-e71abdeba389")
+		)
+		(pin "2"
+			(uuid "c573ee09-232c-4bf9-bddb-969e14b8c1fb")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "2")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R44")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 90 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Device:R")
+		(at 20.32 100.33 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ad8cc51e-9c61-4a17-a052-453df822979c")
-		(property "Sheetname" "MCU"
-			(at 90 37 0)
+		(uuid "26b57983-131c-4d4d-9461-de856e71477f")
+		(property "Reference" "R45"
+			(at 20.32 97.78999999999999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "mcu.kicad_sch"
-			(at 90 59 0)
+		(property "Value" "470k"
+			(at 20.32 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 20.32 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 20.32 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dced9064-08db-4a33-b34f-60c48786a7a5")
+		)
+		(pin "2"
+			(uuid "f80eaad8-50d1-4ad1-b9a0-479596b39763")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "3")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R45")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 142 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Device:R")
+		(at 20.32 139.7 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a9526c00-7685-4ff9-b97b-a81a777ecc3e")
-		(property "Sheetname" "Inputs"
-			(at 142 37 0)
+		(uuid "3bb2813c-6f85-413a-bab3-d5c582f03fb3")
+		(property "Reference" "R46"
+			(at 20.32 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "inputs.kicad_sch"
-			(at 142 59 0)
+		(property "Value" "1M"
+			(at 20.32 142.23999999999998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 20.32 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 20.32 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "567c0ab8-18fa-4446-b045-87fe4375bacc")
+		)
+		(pin "2"
+			(uuid "5f960745-832d-4b6f-b2f6-8a73733c301c")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "4")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R46")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 194 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 20.32 185.42 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "26cb5985-467c-4ca5-bbda-15b5441c935c")
-		(property "Sheetname" "PhotoMOS"
-			(at 194 37 0)
+		(uuid "c41fc29b-10a4-4521-976d-6410fd6274ce")
+		(property "Reference" "J23"
+			(at 20.32 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "photomos.kicad_sch"
-			(at 194 59 0)
+		(property "Value" "CAP1"
+			(at 20.32 187.95999999999998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
+			(at 20.32 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 20.32 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4a6c677d-984f-4a83-ba85-87945c05e877")
+		)
+		(pin "2"
+			(uuid "8b4754bd-f2af-4bd8-b031-8f44ef2dfd94")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "5")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "J23")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 246 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 49.53 59.69 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ff674cd-88b4-431c-a1cf-6f44a848ffd2")
-		(property "Sheetname" "Relays"
-			(at 246 37 0)
+		(uuid "364037e2-1371-4c79-8766-4d0f6b9bfef1")
+		(property "Reference" "TP20"
+			(at 49.53 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "relays.kicad_sch"
-			(at 246 59 0)
+		(property "Value" "CAP1"
+			(at 49.53 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 49.53 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 49.53 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aeccc165-767a-4d47-ae88-4e14ac19c52f")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "6")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "TP20")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 298 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Device:R")
+		(at 90.17 59.69 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9486140d-348e-4f41-8775-4c91f96cb52f")
-		(property "Sheetname" "CapInject"
-			(at 298 37 0)
+		(uuid "396f9d81-c7e5-4ca1-9026-c3cd46fc6eb7")
+		(property "Reference" "R47"
+			(at 90.17 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "capinject.kicad_sch"
-			(at 298 59 0)
+		(property "Value" "100k"
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 90.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "14f2a8e7-0a35-41cb-bdd4-711957180244")
+		)
+		(pin "2"
+			(uuid "82d38cd6-e017-4777-b974-1338043bd993")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "7")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 90.17 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a043c769-13d4-4357-8ff5-18d48c1850e5")
+		(property "Reference" "R48"
+			(at 90.17 97.78999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470k"
+			(at 90.17 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 90.17 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47fa3e7a-2a2f-4422-adbc-6d4e4f2119d9")
+		)
+		(pin "2"
+			(uuid "34f91f74-35eb-402e-a9c8-b50247685a7e")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 90.17 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "98ead8d3-2c56-4cdf-8bd0-46f5f94ff592")
+		(property "Reference" "R49"
+			(at 90.17 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1M"
+			(at 90.17 142.23999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 90.17 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "729946e7-7d00-4a6a-be41-0d3e8acd1689")
+		)
+		(pin "2"
+			(uuid "93acd98a-686b-4dce-852d-1228fcb04be2")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R49")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 90.17 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d7e269d5-9fd4-4d05-920b-3c89412c5046")
+		(property "Reference" "J24"
+			(at 90.17 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CAP2"
+			(at 90.17 187.95999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
+			(at 90.17 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0710c20c-4b9f-46f0-88c1-2f162d220f28")
+		)
+		(pin "2"
+			(uuid "c087c1ae-0c7d-4395-8752-f81ef508dfe4")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "J24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 119.38 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "20bd48db-0497-489e-bd94-64e437f5db93")
+		(property "Reference" "TP21"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CAP2"
+			(at 119.38 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 119.38 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c905c758-6ab4-4f74-8df8-dcd973958e5b")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "TP21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92fce482-2e11-4efe-81f9-eb5a48ea13b5")
+		(property "Reference" "R50"
+			(at 160.02 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 160.02 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 160.02 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f75bc3b-8251-4842-9c8b-efb9690d2944")
+		)
+		(pin "2"
+			(uuid "16b41d19-bff3-459b-bd69-1d0c49f59a54")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "466d7820-61d2-41d8-8399-bbd8a1792fc5")
+		(property "Reference" "R51"
+			(at 160.02 97.78999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470k"
+			(at 160.02 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 160.02 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "498c080d-6666-4743-895b-f44418d7018e")
+		)
+		(pin "2"
+			(uuid "9b44ff06-353e-48f4-92cb-3128961578d7")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a076f4da-2b24-448e-a357-aec7b4e5e88f")
+		(property "Reference" "R52"
+			(at 160.02 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1M"
+			(at 160.02 142.23999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 160.02 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ac3a73b-54ca-4858-886f-ebbc3f9029eb")
+		)
+		(pin "2"
+			(uuid "ab69bf6f-17d7-436c-be5f-243093b4c01a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 160.02 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7f19ebb8-a4b4-4be1-8fcb-8cc9d52bc0cb")
+		(property "Reference" "J25"
+			(at 160.02 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CAP3"
+			(at 160.02 187.95999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
+			(at 160.02 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2514b3f8-3b48-45fd-85cf-f3312a3e77a4")
+		)
+		(pin "2"
+			(uuid "21321261-c22b-47fd-9fca-2b8a344cb94f")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "J25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 190.5 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "51cd8573-7a6d-4d39-9256-b125467aafb0")
+		(property "Reference" "TP22"
+			(at 190.5 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CAP3"
+			(at 190.5 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 190.5 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 190.5 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bee57d94-af5d-4a90-b15e-69f40cab74a3")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "TP22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 229.87 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95c235f4-72f1-4763-b76c-61c1741f9e46")
+		(property "Reference" "R53"
+			(at 229.87 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 229.87 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 229.87 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6f5ab521-ab9f-425e-8a79-671574528df8")
+		)
+		(pin "2"
+			(uuid "f5ba0a2a-5a69-4ac2-b4e8-77e8d08bc19a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 229.87 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "34f5de41-dff5-4693-ada6-952173548be1")
+		(property "Reference" "R54"
+			(at 229.87 97.78999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "470k"
+			(at 229.87 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 229.87 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33d6c957-9852-4ca4-b10e-192cdb7f75a4")
+		)
+		(pin "2"
+			(uuid "f0b965aa-a27a-4717-abb8-26555848376a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R54")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 229.87 139.7 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e074e7e7-ea37-48cd-bd61-0481aebaa8e3")
+		(property "Reference" "R55"
+			(at 229.87 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1M"
+			(at 229.87 142.23999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 229.87 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee86e011-9370-4446-9c53-ff0e9c187623")
+		)
+		(pin "2"
+			(uuid "84d04e33-5c17-4038-bee9-9605b8b2ac5d")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "R55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 229.87 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b50ec28f-0d3c-4952-96c8-53abc076dcc0")
+		(property "Reference" "J26"
+			(at 229.87 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CAP4"
+			(at 229.87 187.95999999999998 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
+			(at 229.87 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47ed074b-1673-433c-8e70-784c9817b5c0")
+		)
+		(pin "2"
+			(uuid "1e9b7725-5a4a-4b14-9d09-e0186065444a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "J26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 260.35 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a1441732-3033-4ccd-aa36-4d02fef410d3")
+		(property "Reference" "TP23"
+			(at 260.35 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CAP4"
+			(at 260.35 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 260.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "39b607de-0a16-46a0-9de8-d20e6bea0f96")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "TP23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 15.24 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77bc6310-e490-4288-b5a8-0ddff5a2bf54")
+		(property "Reference" "#PWR096"
+			(at 15.24 185.42000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 15.24 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 15.24 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 15.24 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed40c001-efa2-47a9-b47c-49f7df6248a3")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "#PWR096")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 85.09 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bf872ef6-1eca-4c27-a333-2118ce28f356")
+		(property "Reference" "#PWR097"
+			(at 85.09 185.42000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 85.09 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5fb9c4fa-4b98-4243-8844-b0120688e11f")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "#PWR097")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 154.94 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad640bca-02d0-4abf-8ee4-68d3e97504c7")
+		(property "Reference" "#PWR098"
+			(at 154.94 185.42000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "86e7b3a6-c52d-4f58-9854-3ff3fbf65224")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "#PWR098")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 224.79 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "985894fc-5d49-44e4-96e8-879a8b7030cc")
+		(property "Reference" "#PWR099"
+			(at 224.79 185.42000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 224.79 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 224.79 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cbc7369d-e015-4009-af26-5c1a999c28e4")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/9486140d-348e-4f41-8775-4c91f96cb52f"
+					(reference "#PWR099")
+					(unit 1)
 				)
 			)
 		)
 	)
 	(sheet_instances
 		(path "/"
-			(page "1")
-		)
-		(path "/c80b89d1-4218-4f6e-98f5-e72c272d220d"
-			(page "2")
-		)
-		(path "/ad8cc51e-9c61-4a17-a052-453df822979c"
-			(page "3")
-		)
-		(path "/a9526c00-7685-4ff9-b97b-a81a777ecc3e"
-			(page "4")
-		)
-		(path "/26cb5985-467c-4ca5-bbda-15b5441c935c"
-			(page "5")
-		)
-		(path "/6ff674cd-88b4-431c-a1cf-6f44a848ffd2"
-			(page "6")
-		)
-		(path "/9486140d-348e-4f41-8775-4c91f96cb52f"
 			(page "7")
 		)
 	)

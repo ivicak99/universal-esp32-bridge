@@ -2,15 +2,11 @@
 	(version 20250114)
 	(generator "kisch")
 	(generator_version "10.0")
-	(uuid "c9855d3d-220e-41c7-9a97-350e2c228717")
+	(uuid "93dfc87f-9e2e-4461-a360-017762238364")
 	(paper "A3")
 	(title_block
-		(title "Universal ESP32 Button/Signal Bridge")
-		(date "2026-05-29")
+		(title "Power - USB-C / diode-OR / SY8089 buck 3.3V")
 		(rev "0.1")
-		(comment 1 "LOW VOLTAGE ONLY - NOT FOR 230V MAINS SWITCHING")
-		(comment 2 "ESP32-S3-WROOM-1-N8 | SY8089 buck 3.3V | 8 iso-in, 8 PhotoMOS, 2 relay, 4 cap-inject")
-		(comment 3 "Schematic ERC clean before PCB layout.")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint"
@@ -5658,231 +5654,3397 @@
 				(embedded_fonts no)
 			)
 	)
-	(sheet
-		(at 38 38)
-		(size 40 20)
+	(text "USB-C diode-OR -> SY8089 buck (2.7-5.5Vin,2A) -> 3.3V. EN tied +5V. Vout=0.6*(1+R/R)=3.32V."
+		(exclude_from_sim no)
+		(at 40 25 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "feaa1835-82de-47c3-a4f7-f3d065de47ea")
+	)
+	(label "VBUS"
+		(at 74.93 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8cc1bc3d-18be-4700-93ef-c7ceecc2ee40")
+	)
+	(label "VBUS"
+		(at 74.93 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1cc1a269-51ce-41d2-8302-f4b398184dae")
+	)
+	(label "VBUS"
+		(at 74.93 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9138ae60-2c5c-457c-befd-5a4160e95817")
+	)
+	(label "VBUS"
+		(at 74.93 64.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9c061aa1-643c-4e5e-9775-b729e38033ca")
+	)
+	(label "USB_DP_RAW"
+		(at 74.93 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "978f1de3-9ccf-477f-987c-c1c57eb67aca")
+	)
+	(label "USB_DP_RAW"
+		(at 74.93 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "baf4130f-02ca-40f5-8e30-1870b6f6b372")
+	)
+	(label "USB_DM_RAW"
+		(at 74.93 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "88cfb6d3-96e6-4cdd-afd2-48d571345d22")
+	)
+	(label "USB_DM_RAW"
+		(at 74.93 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "831885e9-9a64-47d3-9db7-58c8e81cb8d0")
+	)
+	(label "CC1"
+		(at 74.93 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "68f49d93-809a-4c87-98b0-b99b1c9879b2")
+	)
+	(label "CC1"
+		(at 149.86 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ca7a7ef6-71af-4f6c-b7aa-e0a94d4aaf9c")
+	)
+	(label "CC2"
+		(at 74.93 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "62922629-39bb-4632-969a-eb8a9d41b897")
+	)
+	(label "CC2"
+		(at 149.86 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "71927759-6e2c-4914-b74a-6728b76317d4")
+	)
+	(label "USB_DP_RAW"
+		(at 144.78 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "94be61bd-7f7b-4d82-8fc9-e1150adac28f")
+	)
+	(label "USB_DM_RAW"
+		(at 144.78 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0fb7b933-6c81-4670-8e85-0f25d2d3e7c8")
+	)
+	(label "VBUS"
+		(at 149.86 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "13d773b6-cc23-4a79-9223-5fee15bac935")
+	)
+	(label "VBUS"
+		(at 243.84 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dc3097d2-8575-42a8-8934-46150bc70a6b")
+	)
+	(label "EXT5V"
+		(at 234.95 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "48707326-46be-4f2d-8d56-8d7e09649e91")
+	)
+	(label "EXT5V"
+		(at 243.84 149.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3c16953d-b043-41c9-9032-de233a756c6e")
+	)
+	(label "SW"
+		(at 387.35 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b738eef7-6143-4d45-9541-e43193e4cc5c")
+	)
+	(label "FB"
+		(at 372.11 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e60c7e4e-c8ec-4d0f-a697-ce1cbc7d71fc")
+	)
+	(label "SW"
+		(at 449.58 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cd2b6533-f15d-4c03-872e-fe80df4189b1")
+	)
+	(label "FB"
+		(at 519.43 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e05a1639-be1f-4ba3-92af-9a4df7e73eac")
+	)
+	(label "FB"
+		(at 519.43 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c2451d54-c7fc-4065-91cf-3b70e4deebb6")
+	)
+	(global_label "USB_D+"
+		(at 154.94 129.54 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5eadd4a2-35fb-491f-a419-83971a534ac0")
+	)
+	(global_label "USB_D-"
+		(at 154.94 132.08 0)
+		(shape bidirectional)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "99021686-8077-4a63-b82c-ca9925ad63a1")
+	)
+	(no_connect
+		(at 74.93 92.71)
+		(uuid "054910de-73d4-4d4c-a7cc-4375eec6802c")
+	)
+	(no_connect
+		(at 74.93 95.25)
+		(uuid "e001a667-bee0-4b56-810e-1f5318a0ef4b")
+	)
+	(symbol
+		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
+		(at 59.69 80.01 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c80b89d1-4218-4f6e-98f5-e72c272d220d")
-		(property "Sheetname" "Power"
-			(at 38 37 0)
+		(uuid "cd9b2789-e13f-4d56-afb5-07607d6f7821")
+		(property "Reference" "J1"
+			(at 59.69 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "power.kicad_sch"
-			(at 38 59 0)
+		(property "Value" "USB-C"
+			(at 59.69 82.55000000000001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+			(at 59.69 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "A1"
+			(uuid "5b70689d-bf2e-4b17-bc5f-602f37d39bc9")
+		)
+		(pin "A12"
+			(uuid "0d6c3a2f-e751-4ac8-95f3-15738c3a09f0")
+		)
+		(pin "A4"
+			(uuid "0dc1580d-8a41-400f-b03b-2952e0bf4745")
+		)
+		(pin "A5"
+			(uuid "5dd68bb9-d817-4007-8b9d-f8e21d314f70")
+		)
+		(pin "A6"
+			(uuid "cac25a3b-f258-4397-8736-32cc94098446")
+		)
+		(pin "A7"
+			(uuid "60dcc495-d9cc-4f5e-a692-b6fc5eabf592")
+		)
+		(pin "A8"
+			(uuid "4f8c1b82-b65d-4e20-96d1-3c19a252df1c")
+		)
+		(pin "A9"
+			(uuid "3f07efe4-14f6-48a0-a7b7-1a29b6cfbe96")
+		)
+		(pin "B1"
+			(uuid "eddbb9dd-9083-43bd-9e30-172c16407a78")
+		)
+		(pin "B12"
+			(uuid "ce635a74-4ea9-4ab7-99eb-7dcdd0a52aae")
+		)
+		(pin "B4"
+			(uuid "d1de15a7-2f10-456d-b7bc-d0a79c1609ae")
+		)
+		(pin "B5"
+			(uuid "d0617cad-1885-4d5e-b59f-67b7bbe67f0d")
+		)
+		(pin "B6"
+			(uuid "d8d1e271-e9a9-41e7-b432-fadfe0834f0b")
+		)
+		(pin "B7"
+			(uuid "af9a1c11-ebfb-4d24-ae2c-b78ab6601c59")
+		)
+		(pin "B8"
+			(uuid "2813f8dd-8b27-4eac-baec-c7ff49bcc7f7")
+		)
+		(pin "B9"
+			(uuid "2407548c-2a7b-4ebf-9007-81fc7eb8734b")
+		)
+		(pin "SH"
+			(uuid "86e797a0-deb4-44fa-8713-a0711ef108ac")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "2")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "J1")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 90 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Device:R")
+		(at 149.86 39.37 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ad8cc51e-9c61-4a17-a052-453df822979c")
-		(property "Sheetname" "MCU"
-			(at 90 37 0)
+		(uuid "dd4649a5-56d5-40cd-a8af-4fa4f92ad51c")
+		(property "Reference" "R1"
+			(at 149.86 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "mcu.kicad_sch"
-			(at 90 59 0)
+		(property "Value" "5.1k"
+			(at 149.86 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 149.86 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cec18a81-6a03-437e-83ae-92dbc733e801")
+		)
+		(pin "2"
+			(uuid "3ffd2f15-d55d-4a4d-83ba-3af57e470969")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "3")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "R1")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 142 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Device:R")
+		(at 149.86 74.93 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a9526c00-7685-4ff9-b97b-a81a777ecc3e")
-		(property "Sheetname" "Inputs"
-			(at 142 37 0)
+		(uuid "6a9acf1f-1bd3-48e9-9c51-9aa8d06f4ba2")
+		(property "Reference" "R2"
+			(at 149.86 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "inputs.kicad_sch"
-			(at 142 59 0)
+		(property "Value" "5.1k"
+			(at 149.86 77.47000000000001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 149.86 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f034cb15-f3ba-4d9a-8425-5800f9b5b254")
+		)
+		(pin "2"
+			(uuid "53bbf0e4-8ee1-427a-9177-eebe210775bb")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "4")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "R2")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 194 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Power_Protection:USBLC6-2P6")
+		(at 149.86 129.54 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "26cb5985-467c-4ca5-bbda-15b5441c935c")
-		(property "Sheetname" "PhotoMOS"
-			(at 194 37 0)
+		(uuid "b866eed2-db38-4b41-bcba-0652305b67bb")
+		(property "Reference" "U1"
+			(at 149.86 126.99999999999999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "photomos.kicad_sch"
-			(at 194 59 0)
+		(property "Value" "USBLC6-2SC6"
+			(at 149.86 132.07999999999998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+			(at 149.86 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e5654746-d846-45ea-aec6-2ca7de13373d")
+		)
+		(pin "2"
+			(uuid "eae6dc17-f6b8-42d0-9c04-b31a3449b08b")
+		)
+		(pin "3"
+			(uuid "f3d38f47-7ef2-4a6e-847b-c34bb82da5b3")
+		)
+		(pin "4"
+			(uuid "c9ab321e-24c6-4af0-9827-bd999cc21b4e")
+		)
+		(pin "5"
+			(uuid "53ae5f1d-d5ce-4994-8e68-02f11927f96c")
+		)
+		(pin "6"
+			(uuid "ded38e3d-12c6-488f-8e87-735e36ff5892")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "5")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "U1")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 246 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 240.03 39.37 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ff674cd-88b4-431c-a1cf-6f44a848ffd2")
-		(property "Sheetname" "Relays"
-			(at 246 37 0)
+		(uuid "a6f59a6c-7660-48ae-82ce-d3d08ecff93e")
+		(property "Reference" "D1"
+			(at 240.03 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "relays.kicad_sch"
-			(at 246 59 0)
+		(property "Value" "SS54"
+			(at 240.03 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMC"
+			(at 240.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "af78608d-11f5-46e5-a43f-1ee34b2dffcf")
+		)
+		(pin "2"
+			(uuid "4d005e53-c8c8-4293-a41b-9d7353366ed6")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "6")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "D1")
+					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet
-		(at 298 38)
-		(size 40 20)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 240.03 90.17 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9486140d-348e-4f41-8775-4c91f96cb52f")
-		(property "Sheetname" "CapInject"
-			(at 298 37 0)
+		(uuid "c7222827-a16f-4443-b3f0-810d0b1c5773")
+		(property "Reference" "J2"
+			(at 240.03 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "capinject.kicad_sch"
-			(at 298 59 0)
+		(property "Value" "EXT 5V"
+			(at 240.03 92.71000000000001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
+			(at 240.03 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e9e2e4b-6443-4fa7-94a2-9b810fbb284f")
+		)
+		(pin "2"
+			(uuid "96486ff5-5a0c-4025-9aa0-17477accec91")
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
-					(page "7")
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 240.03 149.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95393d31-bde7-470e-8deb-5b78b8e99036")
+		(property "Reference" "D2"
+			(at 240.03 147.32000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SS54"
+			(at 240.03 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMC"
+			(at 240.03 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3b77995e-533b-4789-9bed-38b25bb672b3")
+		)
+		(pin "2"
+			(uuid "12bfe4b1-7a98-4fe8-9207-494daca57d99")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 309.88 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6ff03b3e-ff72-4359-9c70-beec7c09aebb")
+		(property "Reference" "C1"
+			(at 309.88 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100uF"
+			(at 309.88 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 309.88 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c57d51f7-4a7b-4df1-9fd6-cc426a91fa6b")
+		)
+		(pin "2"
+			(uuid "70d99c70-0eeb-493f-8fc6-3f0670d7bdc2")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 309.88 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "60cb0f81-7851-452d-a1f5-93d9abc5798c")
+		(property "Reference" "C2"
+			(at 309.88 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 309.88 82.55000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 309.88 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2614d687-8571-487e-8a7d-8eddd26666e4")
+		)
+		(pin "2"
+			(uuid "a63d29ee-934c-4ae4-8c86-7c64c01d909e")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bridge:SY8089")
+		(at 379.73 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1cbbc64b-5245-46bb-9778-9183e2c852c8")
+		(property "Reference" "U2"
+			(at 379.73 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SY8089AAAC"
+			(at 379.73 92.71000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 379.73 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 379.73 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99609dbb-4974-42f4-ac4e-1b5d38f14b4e")
+		)
+		(pin "2"
+			(uuid "9602e2ef-bc5a-4240-a07a-5dee588c4d90")
+		)
+		(pin "3"
+			(uuid "593cd765-248d-46a3-af7d-1eee4ba187d3")
+		)
+		(pin "4"
+			(uuid "f92c68aa-7056-4d55-b9a0-58b491ec93bc")
+		)
+		(pin "5"
+			(uuid "18bbba05-566f-4c9a-abd5-bf757d9e38f6")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 379.73 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2fc454ef-d38f-4e48-a341-77da76ede83b")
+		(property "Reference" "C3"
+			(at 379.73 157.48000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF"
+			(at 379.73 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 379.73 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 379.73 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b1ee2276-d1bf-43ee-8cbe-dd0dfe9fba8c")
+		)
+		(pin "2"
+			(uuid "b413f1b0-1866-4096-b552-e648f12dff89")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 449.58 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1d90c461-67d8-432e-864e-b0a969f8a397")
+		(property "Reference" "L1"
+			(at 449.58 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.2uH"
+			(at 449.58 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_1210_3225Metric"
+			(at 449.58 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 449.58 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "98e9d7f2-4223-47b7-849c-adaf7178cbe4")
+		)
+		(pin "2"
+			(uuid "98899fcd-65af-4aca-91c1-264ddfb0a4b4")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 449.58 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dcdc04ed-c64f-4394-8a10-12f69f3b86f5")
+		(property "Reference" "C4"
+			(at 449.58 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF"
+			(at 449.58 92.71000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 449.58 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 449.58 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1bf0bcc8-d430-455e-bbbf-5a0526d73f59")
+		)
+		(pin "2"
+			(uuid "8dd81b32-4a34-4907-bd37-aa99cfec6e23")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 519.43 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6faa6f76-b1b1-4831-b3ac-fca33271ce4a")
+		(property "Reference" "R3"
+			(at 519.43 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "453k"
+			(at 519.43 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 519.43 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 519.43 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ae24cbb1-d0e9-4ce4-a853-3d5c7cc47698")
+		)
+		(pin "2"
+			(uuid "06373eb1-e43b-4aa5-b083-02c8c04bd811")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 519.43 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "00c16846-3435-43a4-9c9b-d740f1d61fa9")
+		(property "Reference" "R4"
+			(at 519.43 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 519.43 82.55000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 519.43 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 519.43 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0bdeed62-9e28-4088-87e3-60b0e8dd46aa")
+		)
+		(pin "2"
+			(uuid "92df709c-92e3-4630-82a0-7576c99b8054")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 590.55 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "090d6bc0-cd06-4e8d-960f-352351d61a43")
+		(property "Reference" "TP1"
+			(at 590.55 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 590.55 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 590.55 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 590.55 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "18ea05e7-ac2b-45aa-82e5-6cb6266ff646")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 629.92 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f859bafe-9e89-4c89-b2c1-41b4eb8d2475")
+		(property "Reference" "TP2"
+			(at 629.92 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 629.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 629.92 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 629.92 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "41326655-8107-4e98-ad60-14e7fa335cfe")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 670.56 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "66803c02-f9f2-4d76-bead-0e64d4303425")
+		(property "Reference" "TP3"
+			(at 670.56 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 670.56 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 670.56 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 670.56 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8065a0a5-ddf5-4f86-b41c-187166da3a3d")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a787d004-eea2-4e44-a83a-88c65d0c678a")
+		(property "Reference" "#PWR001"
+			(at 59.69 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 105.41000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bcacacd9-5729-4a74-bc61-b248bd233224")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "678d3109-6b04-41ba-9fd4-2c808416e7b0")
+		(property "Reference" "#PWR002"
+			(at 59.69 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 105.41000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e0632e5a-d9ee-4407-8167-648e0465a826")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "64a11b52-0a7a-4945-a6dc-a447bb9c55b6")
+		(property "Reference" "#PWR003"
+			(at 59.69 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 105.41000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fbefda26-e99f-41be-8ddd-b95ad4b40167")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c34809a4-844d-4ff8-9bf5-636d132d152e")
+		(property "Reference" "#PWR004"
+			(at 59.69 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 105.41000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eac5eb57-fe9b-479c-9905-a5bc3957afe0")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 52.07 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0557e4f3-b52e-48a6-9b99-d3ae60728ca9")
+		(property "Reference" "#PWR005"
+			(at 52.07 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 52.07 105.41000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 52.07 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 52.07 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "233419e3-f4a3-4b92-b4a9-f1102d859dad")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 149.86 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "89a489ec-4046-40bd-a420-2e705a79fdb3")
+		(property "Reference" "#PWR006"
+			(at 149.86 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 149.86 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e0b24e0d-fed8-404c-9aa8-3743cf272164")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR006")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 149.86 78.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b85c6a4-c163-40d1-92d1-34e04740f502")
+		(property "Reference" "#PWR007"
+			(at 149.86 76.19999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 149.86 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d4d7dc41-9acd-4086-99d5-4531462b3782")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 149.86 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "daf3adda-c902-408f-afb7-4d2279ac06c5")
+		(property "Reference" "#PWR008"
+			(at 149.86 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 149.86 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "482a8c96-1f20-4d99-a8c5-b85128f80e7d")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR008")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 236.22 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b1a164d-39f5-4285-b140-d578b37f28b0")
+		(property "Reference" "#PWR009"
+			(at 236.22 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 236.22 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e1361052-f900-4b9c-a694-d42302ca90b6")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR009")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 234.95 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3c0470df-7a40-4db2-9a99-023d415c5580")
+		(property "Reference" "#PWR010"
+			(at 234.95 90.16999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 234.95 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 234.95 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 234.95 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "47965c12-7c9f-4dbd-8111-44b9e55e15cb")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 236.22 149.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d32e6278-4857-4b9d-94cd-2b29552071e8")
+		(property "Reference" "#PWR011"
+			(at 236.22 147.32000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 236.22 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "df7ff915-42f3-4a98-87c4-644b13faacdb")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 309.88 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bb3e0546-7089-4170-9937-2b6fd9e4cf85")
+		(property "Reference" "#PWR012"
+			(at 309.88 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 309.88 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 309.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4e444f94-7ba6-4409-aa4c-a7f3689f95f1")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 309.88 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1810b9a3-8b4c-4fb3-81fc-b1697d27f07c")
+		(property "Reference" "#PWR013"
+			(at 309.88 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 309.88 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 309.88 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "065c82ae-6314-47c0-8981-1b4f60571c8a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 309.88 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "254e92d9-d2a3-4ddb-aab3-813952b241fe")
+		(property "Reference" "#PWR014"
+			(at 309.88 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 309.88 78.74000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 309.88 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b69721c-e479-4347-b95e-d62eb85f3f50")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 309.88 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f451854a-d602-41d1-8da6-33b5137dd653")
+		(property "Reference" "#PWR015"
+			(at 309.88 81.27999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 309.88 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 309.88 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31fb35ff-393d-40a4-8926-243fd23e43df")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 372.11 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e0db4ae1-2e51-4edf-ad3c-5a8f461705b2")
+		(property "Reference" "#PWR016"
+			(at 372.11 85.08999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 372.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 372.11 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 372.11 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4ce10bac-1c4f-49ef-a539-889c1abe72ff")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 372.11 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6eaf14a0-9023-4aa9-a362-45d93de705f0")
+		(property "Reference" "#PWR017"
+			(at 372.11 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 372.11 92.71000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 372.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 372.11 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "775e39a8-e19b-44c2-beb6-f45534c413df")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 379.73 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dc365fb4-5c4f-4c43-8174-d2f9cab34568")
+		(property "Reference" "#PWR018"
+			(at 379.73 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 379.73 100.33000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 379.73 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 379.73 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4b4e1c1c-f377-48f8-ae14-8cb7cbc8206b")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 379.73 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ec37801-4889-428c-ae3e-0c1657b1c5f2")
+		(property "Reference" "#PWR019"
+			(at 379.73 153.67000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 379.73 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 379.73 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 379.73 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19ef850f-809e-4b19-830e-aa7caa178b22")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 379.73 163.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ac30dc85-e97c-4022-bc7c-b36ba40408d6")
+		(property "Reference" "#PWR020"
+			(at 379.73 161.29000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 379.73 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 379.73 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 379.73 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5115ac9b-e738-4af5-98b7-f7920ea3db59")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 449.58 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "924a27a5-3720-4674-b15d-0b0713312bfa")
+		(property "Reference" "#PWR021"
+			(at 449.58 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 449.58 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 449.58 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 449.58 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff4ad079-f792-44e1-a1de-38e03c65ea7a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 449.58 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a90bcf9d-176d-46b4-8ef4-b7638a28d179")
+		(property "Reference" "#PWR022"
+			(at 449.58 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 449.58 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 449.58 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 449.58 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03c275f7-c8e8-466c-a6e6-845a69b2c591")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 449.58 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "36ba7058-ec59-44f2-878d-6eaba8ffcdf8")
+		(property "Reference" "#PWR023"
+			(at 449.58 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 449.58 96.52000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 449.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 449.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e60c521b-310d-4ea2-a8ab-850479c9c1c9")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 519.43 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "02b3fe03-3865-4948-9afe-0f5d3b83001a")
+		(property "Reference" "#PWR024"
+			(at 519.43 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 519.43 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 519.43 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 519.43 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "70a1f07f-1f82-4e4c-851b-cfd0fc6fc772")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 519.43 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "adccced2-0d80-4179-9bed-8d0455907101")
+		(property "Reference" "#PWR025"
+			(at 519.43 81.27999999999999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 519.43 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 519.43 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 519.43 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "71ec13e8-b89a-4bee-99ae-8a539f6d2f95")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 590.55 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "05db8b71-41a2-4bc7-a0d3-5a7617a27521")
+		(property "Reference" "#PWR026"
+			(at 590.55 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 590.55 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 590.55 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 590.55 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "81d732f2-8090-47ba-9814-0f731af789cf")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 590.55 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c7f8de89-fd26-424b-bf89-9bf63b076deb")
+		(property "Reference" "#PWR027"
+			(at 590.55 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 590.55 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 590.55 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 590.55 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7442d724-30db-4c41-bf37-1877b215ec5a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 629.92 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a8ebf67f-34bd-4739-a06c-910d2ca915d4")
+		(property "Reference" "#PWR028"
+			(at 629.92 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 629.92 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 629.92 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 629.92 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a5ae05ef-b2e4-4018-a7fc-82de05bbd909")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 629.92 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dcacdae7-edd5-4288-b7ca-0e714a9b3a28")
+		(property "Reference" "#PWR029"
+			(at 629.92 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 629.92 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 629.92 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 629.92 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "70af6705-819f-48b2-9c69-cba9efa7cda8")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 670.56 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fce7fe7-b231-46da-adb8-3f27251243b2")
+		(property "Reference" "#PWR030"
+			(at 670.56 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 670.56 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 670.56 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 670.56 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "59a8575f-b07d-4fdd-82ab-811f25c7f14f")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 670.56 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9411f498-dbea-47fd-b21e-15b7d46baad5")
+		(property "Reference" "#PWR031"
+			(at 670.56 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 670.56 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 670.56 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 670.56 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e6c14f6c-3839-4bc7-8a15-33097c67b849")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 709.93 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e959c8fa-2fee-405a-ab71-b619a3192ebb")
+		(property "Reference" "#PWR032"
+			(at 709.93 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 709.93 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 709.93 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 709.93 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8390a235-d5fa-463c-9dd3-dc3231c04a15")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
+		(at 709.93 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dd73a979-7b6f-422d-a926-f48da6abe95c")
+		(property "Reference" "#PWR033"
+			(at 709.93 207.01000000000002 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 709.93 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 709.93 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 709.93 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e3e0a1ce-0857-4249-b834-f16873127cc7")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 590.55 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6bf7b662-3bd4-4518-886e-15875fc13a8e")
+		(property "Reference" "#PWR034"
+			(at 590.55 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 590.55 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 590.55 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 590.55 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "54fd472f-2fc1-4b2b-b4ba-b8c86500b972")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 629.92 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3de349ee-7437-4300-ac22-703bbb9fe6ee")
+		(property "Reference" "#PWR035"
+			(at 629.92 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 629.92 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 629.92 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 629.92 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2637d583-9564-4f1d-9a5a-fcfbfd4460f6")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 670.56 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "58c4fc30-15d1-4949-961d-1239c301fbf6")
+		(property "Reference" "#PWR036"
+			(at 670.56 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 670.56 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 670.56 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 670.56 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c5685cac-908e-4f7e-844b-d01d6553d14a")
+		)
+		(instances
+			(project "universal-esp32-bridge"
+				(path "/c9855d3d-220e-41c7-9a97-350e2c228717/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+					(reference "#PWR036")
+					(unit 1)
 				)
 			)
 		)
 	)
 	(sheet_instances
 		(path "/"
-			(page "1")
-		)
-		(path "/c80b89d1-4218-4f6e-98f5-e72c272d220d"
 			(page "2")
-		)
-		(path "/ad8cc51e-9c61-4a17-a052-453df822979c"
-			(page "3")
-		)
-		(path "/a9526c00-7685-4ff9-b97b-a81a777ecc3e"
-			(page "4")
-		)
-		(path "/26cb5985-467c-4ca5-bbda-15b5441c935c"
-			(page "5")
-		)
-		(path "/6ff674cd-88b4-431c-a1cf-6f44a848ffd2"
-			(page "6")
-		)
-		(path "/9486140d-348e-4f41-8775-4c91f96cb52f"
-			(page "7")
 		)
 	)
 )

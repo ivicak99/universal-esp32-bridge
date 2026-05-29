@@ -1,8 +1,9 @@
 # Universal ESP32 Button/Signal Bridge — Design Package
 
-**Rev:** 0.1 (paper design)
+**Rev:** 0.2 (realized ERC-clean schematic)
 **Date:** 2026-05-29
 **MCU module:** ESP32-S3-WROOM-1-N8 (8 MB flash, **no** PSRAM — chosen so GPIO35/36/37 stay free)
+**Regulator:** SY8089AAAC buck (2.7–5.5 V in, 2 A) → 3.3 V  *(replaced AMS1117 for Wi-Fi-peak headroom)*
 **PCB:** 4-layer, signal / GND / PWR / signal
 **Passives:** 0603 minimum (0805/1206 where power dictates). No 0201/01005.
 **Sourcing target:** JLCPCB / LCSC
@@ -12,6 +13,50 @@
 > ≤60 V / ≤0.5 A on isolated outputs). It is **NOT designed to switch 230 V mains** and
 > must never be wired to mains. The mechanical relays use low-voltage contacts only.
 > Silk legend to print: **"LOW VOLTAGE ONLY — NOT FOR MAINS (230 V) SWITCHING".**
+
+---
+
+## 0. Realized KiCad schematic (rev 0.2) — STATUS
+
+The paper design is now a **real, ERC-clean KiCad 10 hierarchical schematic** with actual
+library symbols and assigned footprints. **No PCB layout yet** (per instruction — layout
+waits until you're happy with the schematic; ERC already passes).
+
+**ERC result:** `0 errors, 0 warnings` (KiCad 10.0.3 `kicad-cli sch erc`). Netlist verified:
+160 components, 121 nets; rails, FB divider, reset/boot, relay coils all correctly wired;
+**galvanic isolation barrier confirmed intact** (no field-side input/output net touches GND
+or the ESP32).
+
+**Project files (repo root):**
+| File | Contents |
+|------|----------|
+| `universal-esp32-bridge.kicad_sch` | Root sheet (instantiates the 6 child sheets) |
+| `power.kicad_sch` | USB-C, diode-OR, SY8089 buck, rails, test points |
+| `mcu.kicad_sch` | ESP32-S3-WROOM-1, reset/boot, status LED, UART + spare headers |
+| `inputs.kicad_sch` | 8× isolated input channels |
+| `photomos.kicad_sch` | 8× PhotoMOS dry-contact outputs |
+| `relays.kicad_sch` | 2× relay channels |
+| `capinject.kicad_sch` | 4× cap-injection channels |
+| `bridge.kicad_sym` | Custom symbols: SY8089, AQY212GS |
+| `sym-lib-table` / `fp-lib-table` | Point to KiCad 10 global libs + the custom lib |
+| `schematic.pdf` | Rendered schematic (view without KiCad) |
+| `gen/` | Python generator (`build.py`, `kisch.py`) that emits the project |
+
+**Two engineering changes made while realizing the design:**
+1. **Regulator → SY8089 buck.** AMS1117's dropout was marginal on the ~4.6 V diode-OR rail
+   at Wi-Fi peaks. SY8089 (2.7–5.5 V in) handles the low rail with margin and is more
+   efficient. FB divider R3=453 k / R4=100 k → 3.32 V.
+2. **Input front-end → fixed 2.2 kΩ (1206), not a CRD.** Constant-current diodes are poorly
+   stocked on LCSC. A 2.2 kΩ/1206 series resistor + the high-CTR EL357N covers 3–24 V
+   (≈0.9 mA→10 mA) and the 1206 handles the ~0.24 W at 24 V. Anti-parallel 1N4148WS gives
+   reverse protection. (A CRD is still a valid swap if you prefer constant current.)
+
+**To regenerate / re-run ERC:**
+```
+cd gen && python3 build.py
+/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli sch erc \
+    ../universal-esp32-bridge.kicad_sch --exit-code-violations
+```
 
 ---
 
@@ -373,15 +418,25 @@ stock code + footprint on lcsc.com at order time.
      accept that current varies 1–10 mA across the range. The EL357N's high CTR copes.
      I left both footprints so you can choose at build time.
 
-2. **LCSC part numbers are not all verified.** I'm confident on AMS1117 (C6186), USBLC6
-   (C7519), AO3400A (C20917). The ESP32-S3 module code, CRD, AQY212GS and CPC1017N
-   codes are placeholders — confirm on lcsc.com. AQY212GS in particular may have limited
-   LCSC stock; CPC1017N or TLP241A are fallbacks (CPC1017N only meets 100 mA, not 550).
+2. **LCSC part numbers — now verified for the key actives** against JLCPCB (May 2026):
+   ESP32-S3-WROOM-1-N8 **C2913198**, SY8089AAAC **C78988**, AQY212GS **C719745**,
+   HK4100F-DC5V-SHG **C12072**, USB-C TYPE-C-31-M-12 **C165948**, AO3400A **C20917**.
+   Still confirm before ordering: USBLC6-2SC6 (C7519), EL357N (C124981), SS54 (C22452),
+   1N4148WS (C2128), M7 (C95872) — high-confidence but re-check. Passives are generic.
 
-3. **Power rail headroom.** Diode-OR'd 5 V rail sits at ~4.6 V; AMS1117 to 3.3 V is fine
-   at ESP32 average current but tight at WiFi-TX peaks (~500 mA). If you see brownout
-   resets, options: (a) use a low-Vf P-FET ideal-diode instead of the Schottky OR, or
-   (b) use a buck/LDO with lower dropout (e.g. an SY8089 buck for 5V→3.3V).
+3. **Power rail headroom — resolved by the buck.** Diode-OR'd 5 V rail sits at ~4.6 V.
+   The **SY8089 buck (2.7–5.5 V in)** handles this with large margin, unlike the original
+   AMS1117 LDO (marginal dropout at Wi-Fi peaks). If you ever revert to an LDO, use a
+   low-Vf P-FET ideal-diode for the OR-ing instead of the Schottky.
+
+10. **Relay footprint is a placeholder.** The schematic assigns a generic Fujitsu Form-C
+    footprint to K1/K2 so the BOM resolves, but **HK4100F-DC5V-SHG needs its own land
+    pattern** (sugar-cube THT, ~JQC-3F pitch) created/verified before PCB layout.
+
+11. **Custom symbols (SY8089, AQY212GS) — verify pinout at layout.** SY8089 pinout is from
+    the Silergy datasheet (1=EN,2=GND,3=LX,4=IN,5=FB). AQY212GS modeled as 1=A,2=K (LED) /
+    3,4=load; the load is bidirectional so contact polarity is irrelevant, but confirm the
+    physical pad-to-pin mapping against the AQY212GS datasheet when you build the footprint.
 
 4. **USB current.** With plain 5.1 k CC pulldowns you only guarantee USB default current
    (~500 mA). ESP32 WiFi + both relays + several PhotoMOS can exceed that. **Power the
