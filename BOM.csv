@@ -3,9 +3,9 @@ Item,Qty,References,Value,Footprint,Manufacturer Part,LCSC,JLCPCB,Notes
 2,1,U2,SY8089AAAC,Package_TO_SOT_SMD:SOT-23-5,SY8089AAAC,C78988,Yes,Buck 2.7-5.5Vin/2A; Vout=0.6*(1+R3/R4)
 3,1,U1,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,USBLC6-2SC6,C7519,Yes,USB D+/D- ESD (verify code)
 4,1,J1,USB-C,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,TYPE-C-31-M-12,C165948,Yes,16-pin USB2.0 Type-C
-5,8,U4-U11,EL357N,Package_SO:SOP-4_4.4x2.6mm_P1.27mm,EL357N(B),C124981,Yes,Input optocoupler (verify code)
-6,8,U12-U19,AQY212GS,Package_SO:SOP-4_4.4x2.6mm_P1.27mm,AQY212GS,C719745,Yes,PhotoMOS 60V/1A dry contact
-7,2,K1;K2,HK4100F-DC5V,Relay_THT:Relay_SPDT_Fujitsu_FTR-LYCA005x_FormC_Vertical,HK4100F-DC5V-SHG,C12072,Yes,FOOTPRINT PLACEHOLDER - verify/replace with HK4100F land pattern
+5,8,U4-U11,EL357N,bridge:EL357N_SOP-4,EL357N(B)(TA)-G,C6649,Yes,Input optocoupler SOP-4 2.54mm (LCSC code corrected from C124981)
+6,8,U12-U19,AQY212GS,bridge:AQY212GS_SOP-4,AQY212GS,C719745,Yes,PhotoMOS 60V/1A; SOP-4 2.54mm pitch (LS6.8)
+7,2,K1;K2,HK4100F-DC5V,bridge:HK4100F-DC5V-SHG,HK4100F-DC5V-SHG,C12072,Yes,6-pad land pattern from datasheet; coil=3/4 COM=5/6 NO=1 NC=2
 8,2,Q1;Q2,AO3400A,Package_TO_SOT_SMD:SOT-23,AO3400A,C20917,Yes,Logic-level N-MOSFET relay driver
 9,2,D1;D2,SS54,Diode_SMD:D_SMC,SS54,C22452,Yes,Diode-OR / reverse protect (verify code)
 10,8,D4-D11,1N4148WS,Diode_SMD:D_SOD-323,1N4148WS,C2128,Yes,Input anti-parallel reverse clamp
@@ -35,5 +35,5 @@ Item,Qty,References,Value,Footprint,Manufacturer Part,LCSC,JLCPCB,Notes
 34,23,TP1-TP23,TestPoint,TestPoint:TestPoint_Pad_D1.5mm,(pad),-,n/a,3V3/5V/GND/IN1-8/OUT1-8/CAP1-4
 ,,,,,,,,
 NOTE,,,,,,,,"Cap-inject: schematic carries all 3 R per channel (100k/470k/1M); POPULATE ONE (default 470k). So actual populated cap-inject R = 4, not 12."
-NOTE,,,,,,,,"LCSC codes marked 'verify' are high-confidence but confirm on lcsc.com before ordering. ESP32/buck/PhotoMOS/relay/USB-C codes verified against JLCPCB May 2026."
-NOTE,,,,,,,,"Relay footprint is a PLACEHOLDER (Fujitsu FormC) - HK4100F-DC5V-SHG needs its own land pattern before PCB layout."
+NOTE,,,,,,,,"LCSC codes verified against JLCPCB May 2026: ESP32 C2913198, buck C78988, EL357N C6649, AQY212GS C719745, relay C12072, USB-C C165948, AO3400A C20917."
+NOTE,,,,,,,,"bridge:* footprints (relay/PhotoMOS/opto) generated from EasyEDA/LCSC (datasheet-accurate) and live in footprints/bridge.pretty. HK4100F NO/NC could be swapped - confirm before final."

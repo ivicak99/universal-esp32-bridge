@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "kisch")
 	(generator_version "10.0")
-	(uuid "c9855d3d-220e-41c7-9a97-350e2c228717")
+	(uuid "0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6")
 	(paper "A3")
 	(title_block
 		(title "Universal ESP32 Button/Signal Bridge")
@@ -4143,354 +4143,6 @@
 				)
 				(embedded_fonts no)
 			)
-		(symbol "Relay:Relay_SPDT"
-				(exclude_from_sim no)
-				(in_bom yes)
-				(on_board yes)
-				(in_pos_files yes)
-				(duplicate_pin_numbers_are_jumpers no)
-				(property "Reference" "K"
-					(at 11.43 3.81 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-						(justify left)
-					)
-				)
-				(property "Value" "Relay_SPDT"
-					(at 11.43 1.27 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-						(justify left)
-					)
-				)
-				(property "Footprint" ""
-					(at 11.43 -1.27 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-						(justify left)
-					)
-				)
-				(property "Datasheet" ""
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "Description" "Relay SPDT, monostable, EN50005"
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "ki_keywords" "1P2T 1-Form-C single pole throw"
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(property "ki_fp_filters" "Relay?SPDT*"
-					(at 0 0 0)
-					(show_name no)
-					(do_not_autoplace no)
-					(hide yes)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(symbol "Relay_SPDT_0_0"
-					(polyline
-						(pts
-							(xy 7.62 5.08) (xy 7.62 2.54) (xy 6.985 3.175) (xy 7.62 3.81)
-						)
-						(stroke
-							(width 0)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-				)
-				(symbol "Relay_SPDT_0_1"
-					(rectangle
-						(start -10.16 5.08)
-						(end 10.16 -5.08)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type background)
-						)
-					)
-					(rectangle
-						(start -8.255 1.905)
-						(end -1.905 -1.905)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy -7.62 -1.905) (xy -2.54 1.905)
-						)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy -5.08 5.08) (xy -5.08 1.905)
-						)
-						(stroke
-							(width 0)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy -5.08 -5.08) (xy -5.08 -1.905)
-						)
-						(stroke
-							(width 0)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy -1.905 0) (xy -1.27 0)
-						)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy -0.635 0) (xy 0 0)
-						)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy 0.635 0) (xy 1.27 0)
-						)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy 1.905 0) (xy 2.54 0)
-						)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy 2.54 5.08) (xy 2.54 2.54) (xy 3.175 3.175) (xy 2.54 3.81)
-						)
-						(stroke
-							(width 0)
-							(type default)
-						)
-						(fill
-							(type outline)
-						)
-					)
-					(polyline
-						(pts
-							(xy 3.175 0) (xy 3.81 0)
-						)
-						(stroke
-							(width 0.254)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy 5.08 -2.54) (xy 3.175 3.81)
-						)
-						(stroke
-							(width 0.508)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-					(polyline
-						(pts
-							(xy 5.08 -2.54) (xy 5.08 -5.08)
-						)
-						(stroke
-							(width 0)
-							(type default)
-						)
-						(fill
-							(type none)
-						)
-					)
-				)
-				(symbol "Relay_SPDT_1_1"
-					(pin passive line
-						(at 5.08 -7.62 90)
-						(length 2.54)
-						(name ""
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-						(number "11"
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-					)
-					(pin passive line
-						(at 2.54 7.62 270)
-						(length 2.54)
-						(name ""
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-						(number "12"
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-					)
-					(pin passive line
-						(at 7.62 7.62 270)
-						(length 2.54)
-						(name ""
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-						(number "14"
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-					)
-					(pin passive line
-						(at -5.08 7.62 270)
-						(length 2.54)
-						(name ""
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-						(number "A1"
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-					)
-					(pin passive line
-						(at -5.08 -7.62 90)
-						(length 2.54)
-						(name ""
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-						(number "A2"
-							(effects
-								(font
-									(size 1.27 1.27)
-								)
-							)
-						)
-					)
-				)
-				(embedded_fonts no)
-			)
 		(symbol "Switch:SW_Push"
 				(pin_numbers
 					(hide yes)
@@ -4980,6 +4632,36 @@
 						(name "L1" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
 					(pin passive line (at 7.62 -2.54 180) (length 2.54)
 						(name "L2" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+				)
+			)
+		(symbol "bridge:HK4100F"
+				(pin_names (offset 1.016))
+				(exclude_from_sim no)
+				(in_bom yes)
+				(on_board yes)
+				(property "Reference" "K" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
+				(property "Value" "HK4100F-DC5V" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
+				(property "Footprint" "bridge:HK4100F-DC5V-SHG" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+				(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+				(symbol "HK4100F_0_1"
+					(rectangle (start -5.08 6.35) (end 5.08 -6.35)
+						(stroke (width 0.254) (type default))
+						(fill (type background))
+					)
+				)
+				(symbol "HK4100F_1_1"
+					(pin passive line (at -7.62 5.08 0) (length 2.54)
+						(name "COIL+" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+					(pin passive line (at -7.62 2.54 0) (length 2.54)
+						(name "COIL-" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+					(pin passive line (at 7.62 5.08 180) (length 2.54)
+						(name "COM" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+					(pin passive line (at 7.62 2.54 180) (length 2.54)
+						(name "COM" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+					(pin passive line (at 7.62 -2.54 180) (length 2.54)
+						(name "NO" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+					(pin passive line (at 7.62 -5.08 180) (length 2.54)
+						(name "NC" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
 				)
 			)
 		(symbol "bridge:SY8089"
@@ -5665,7 +5347,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c80b89d1-4218-4f6e-98f5-e72c272d220d")
+		(uuid "c2d4c363-5a79-4dbb-bc02-b6593c9369d3")
 		(property "Sheetname" "Power"
 			(at 38 37 0)
 			(effects
@@ -5686,7 +5368,7 @@
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
+				(path "/0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6"
 					(page "2")
 				)
 			)
@@ -5699,7 +5381,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ad8cc51e-9c61-4a17-a052-453df822979c")
+		(uuid "6d37f495-356a-4c88-8594-3cce26ac030c")
 		(property "Sheetname" "MCU"
 			(at 90 37 0)
 			(effects
@@ -5720,7 +5402,7 @@
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
+				(path "/0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6"
 					(page "3")
 				)
 			)
@@ -5733,7 +5415,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a9526c00-7685-4ff9-b97b-a81a777ecc3e")
+		(uuid "f1d97dce-80b5-4531-9fb8-54b16ed790ea")
 		(property "Sheetname" "Inputs"
 			(at 142 37 0)
 			(effects
@@ -5754,7 +5436,7 @@
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
+				(path "/0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6"
 					(page "4")
 				)
 			)
@@ -5767,7 +5449,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "26cb5985-467c-4ca5-bbda-15b5441c935c")
+		(uuid "1bf93162-c7b9-4538-a9cd-4c16ca0a95aa")
 		(property "Sheetname" "PhotoMOS"
 			(at 194 37 0)
 			(effects
@@ -5788,7 +5470,7 @@
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
+				(path "/0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6"
 					(page "5")
 				)
 			)
@@ -5801,7 +5483,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ff674cd-88b4-431c-a1cf-6f44a848ffd2")
+		(uuid "77d322d1-0e52-472a-a5f3-52b5f1cae45d")
 		(property "Sheetname" "Relays"
 			(at 246 37 0)
 			(effects
@@ -5822,7 +5504,7 @@
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
+				(path "/0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6"
 					(page "6")
 				)
 			)
@@ -5835,7 +5517,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9486140d-348e-4f41-8775-4c91f96cb52f")
+		(uuid "fd061560-10c6-4502-85b6-45b0a4bd53e0")
 		(property "Sheetname" "CapInject"
 			(at 298 37 0)
 			(effects
@@ -5856,7 +5538,7 @@
 		)
 		(instances
 			(project "universal-esp32-bridge"
-				(path "/c9855d3d-220e-41c7-9a97-350e2c228717"
+				(path "/0d76a5d1-2165-4f53-b8c8-8ede4fd3b9e6"
 					(page "7")
 				)
 			)
@@ -5866,22 +5548,22 @@
 		(path "/"
 			(page "1")
 		)
-		(path "/c80b89d1-4218-4f6e-98f5-e72c272d220d"
+		(path "/c2d4c363-5a79-4dbb-bc02-b6593c9369d3"
 			(page "2")
 		)
-		(path "/ad8cc51e-9c61-4a17-a052-453df822979c"
+		(path "/6d37f495-356a-4c88-8594-3cce26ac030c"
 			(page "3")
 		)
-		(path "/a9526c00-7685-4ff9-b97b-a81a777ecc3e"
+		(path "/f1d97dce-80b5-4531-9fb8-54b16ed790ea"
 			(page "4")
 		)
-		(path "/26cb5985-467c-4ca5-bbda-15b5441c935c"
+		(path "/1bf93162-c7b9-4538-a9cd-4c16ca0a95aa"
 			(page "5")
 		)
-		(path "/6ff674cd-88b4-431c-a1cf-6f44a848ffd2"
+		(path "/77d322d1-0e52-472a-a5f3-52b5f1cae45d"
 			(page "6")
 		)
-		(path "/9486140d-348e-4f41-8775-4c91f96cb52f"
+		(path "/fd061560-10c6-4502-85b6-45b0a4bd53e0"
 			(page "7")
 		)
 	)

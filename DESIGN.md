@@ -1,6 +1,6 @@
 # Universal ESP32 Button/Signal Bridge — Design Package
 
-**Rev:** 0.2 (realized ERC-clean schematic)
+**Rev:** 0.3 (ERC-clean, real footprints, tidied for review)
 **Date:** 2026-05-29
 **MCU module:** ESP32-S3-WROOM-1-N8 (8 MB flash, **no** PSRAM — chosen so GPIO35/36/37 stay free)
 **Regulator:** SY8089AAAC buck (2.7–5.5 V in, 2 A) → 3.3 V  *(replaced AMS1117 for Wi-Fi-peak headroom)*
@@ -16,11 +16,26 @@
 
 ---
 
-## 0. Realized KiCad schematic (rev 0.2) — STATUS
+## 0. Realized KiCad schematic (rev 0.3) — STATUS
 
 The paper design is now a **real, ERC-clean KiCad 10 hierarchical schematic** with actual
-library symbols and assigned footprints. **No PCB layout yet** (per instruction — layout
-waits until you're happy with the schematic; ERC already passes).
+library symbols, **datasheet-accurate footprints**, and a **tidied, human-readable layout**
+(each pin routed to an offset net label; channels laid out as clean columns). **No PCB
+layout yet** (per instruction — layout waits until you're happy with the schematic).
+
+**Rev 0.3 changes:**
+- **HK4100F-DC5V-SHG footprint built** (6-pad THT land pattern from the LCSC/EasyEDA part,
+  matches datasheet 15.5×10.5 mm). Pin map: coil = 3/4, COM = 5/6 (tied), NO = 1, NC = 2.
+  Custom symbol added so symbol pins match footprint pads. *(NO/NC could be swapped —
+  low-risk, confirm against datasheet at build.)*
+- **AQY212GS footprint corrected** to SOP-4 **2.54 mm pitch** (LS 6.8 mm) — the earlier
+  1.27 mm assumption was wrong. Pinout confirmed 1=A, 2=K, 3/4=load.
+- **EL357N LCSC code corrected to C6649** (the previous C124981 was a trimmer pot, not the
+  opto!). Package confirmed SOP-4 2.54 mm; footprint generated.
+- Footprints `bridge:HK4100F-DC5V-SHG`, `bridge:AQY212GS_SOP-4`, `bridge:EL357N_SOP-4`
+  live in `footprints/bridge.pretty/` (generated via easyeda2kicad from the LCSC parts).
+- Schematic re-laid-out for readability (bigger pages for the 8-channel sheets; labels
+  offset from pins on short stubs routed by each pin's true orientation).
 
 **ERC result:** `0 errors, 0 warnings` (KiCad 10.0.3 `kicad-cli sch erc`). Netlist verified:
 160 components, 121 nets; rails, FB divider, reset/boot, relay coils all correctly wired;
@@ -421,22 +436,22 @@ stock code + footprint on lcsc.com at order time.
 2. **LCSC part numbers — now verified for the key actives** against JLCPCB (May 2026):
    ESP32-S3-WROOM-1-N8 **C2913198**, SY8089AAAC **C78988**, AQY212GS **C719745**,
    HK4100F-DC5V-SHG **C12072**, USB-C TYPE-C-31-M-12 **C165948**, AO3400A **C20917**.
-   Still confirm before ordering: USBLC6-2SC6 (C7519), EL357N (C124981), SS54 (C22452),
-   1N4148WS (C2128), M7 (C95872) — high-confidence but re-check. Passives are generic.
+   EL357N corrected to **C6649** (the old C124981 was a trimmer pot — fixed). Still confirm
+   before ordering: USBLC6-2SC6 (C7519), SS54 (C22452), 1N4148WS (C2128), M7 (C95872). Passives are generic.
 
 3. **Power rail headroom — resolved by the buck.** Diode-OR'd 5 V rail sits at ~4.6 V.
    The **SY8089 buck (2.7–5.5 V in)** handles this with large margin, unlike the original
    AMS1117 LDO (marginal dropout at Wi-Fi peaks). If you ever revert to an LDO, use a
    low-Vf P-FET ideal-diode for the OR-ing instead of the Schottky.
 
-10. **Relay footprint is a placeholder.** The schematic assigns a generic Fujitsu Form-C
-    footprint to K1/K2 so the BOM resolves, but **HK4100F-DC5V-SHG needs its own land
-    pattern** (sugar-cube THT, ~JQC-3F pitch) created/verified before PCB layout.
+10. **Relay footprint — built (rev 0.3).** Real 6-pad HK4100F land pattern now in
+    `bridge.pretty`. Remaining low-risk item: **NO/NC pad assignment** (pins 1 vs 2) is from
+    decoding the EasyEDA symbol; the relay still works if swapped (just relabel the terminal),
+    but confirm against the HUIKE datasheet before final.
 
-11. **Custom symbols (SY8089, AQY212GS) — verify pinout at layout.** SY8089 pinout is from
-    the Silergy datasheet (1=EN,2=GND,3=LX,4=IN,5=FB). AQY212GS modeled as 1=A,2=K (LED) /
-    3,4=load; the load is bidirectional so contact polarity is irrelevant, but confirm the
-    physical pad-to-pin mapping against the AQY212GS datasheet when you build the footprint.
+11. **Custom symbols (SY8089, AQY212GS, HK4100F) pinouts.** SY8089 from Silergy datasheet
+    (1=EN,2=GND,3=LX,4=IN,5=FB). AQY212GS 1=A,2=K,3/4=load (bidirectional). HK4100F coil=3/4,
+    COM=5/6, NO=1, NC=2. All symbol pins match their generated footprints' pad numbers.
 
 4. **USB current.** With plain 5.1 k CC pulldowns you only guarantee USB default current
    (~500 mA). ESP32 WiFi + both relays + several PhotoMOS can exceed that. **Power the

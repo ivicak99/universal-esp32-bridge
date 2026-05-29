@@ -134,9 +134,13 @@ class Comp:
         self.uuid=_uuid(); self.fields={}; self.mirror=mirror
         self.unit=1
     def pin(self, number):
-        px, py = self.pinmap[str(number)]
+        px, py = self.pinmap[str(number)][:2]
         # rotation 0; lib +Y up -> sch +Y down
         return (round(self.x+px,4), round(self.y-py,4))
+    def outdir(self, number):
+        # outward direction (away from body) from the pin's orientation angle
+        a = int(self.pinmap[str(number)][2]) % 360
+        return {0:'L', 180:'R', 90:'D', 270:'U'}.get(a, 'R')
 
 class Sheet:
     """A child schematic file."""
@@ -144,7 +148,7 @@ class Sheet:
         self.proj=proj; self.name=name; self.filename=filename; self.title=title
         self.file_uuid=_uuid()      # the (uuid) of this file
         self.inst_uuid=_uuid()      # uuid of the (sheet) object placed on root
-        self.page="?"
+        self.page="?"; self.paper="A3"
         self.comps=[]; self.labels=[]; self.powers=[]; self.wires=[]
         self.glabels=[]; self.ncs=[]; self.texts=[]
         self._refs={}
@@ -152,7 +156,7 @@ class Sheet:
     def place(self, lib, name, ref, value, at, footprint=None, fields=None, mirror=None):
         libtext = self.proj.lib(lib)
         pins = pins_of(libtext, name)
-        pinmap = {p['number']:(p['x'],p['y']) for p in pins}
+        pinmap = {p['number']:(p['x'],p['y'],p['angle']) for p in pins}
         c = Comp("%s:%s"%(lib,name), ref, value, at, pinmap, mirror)
         if footprint: c.fields['Footprint']=footprint
         if fields: c.fields.update(fields)
@@ -161,7 +165,7 @@ class Sheet:
     def power(self, sym, at):  # sym in power lib: GND,+3V3,+5V,PWR_FLAG,VBUS...
         self.proj.use_symbol('power', sym)
         pins = pins_of(self.proj.lib('power'), sym)
-        pinmap={p['number']:(p['x'],p['y']) for p in pins}
+        pinmap={p['number']:(p['x'],p['y'],p['angle']) for p in pins}
         c=Comp("power:%s"%sym, _pwr_ref(), sym, at, pinmap)
         c.is_power=True
         self.powers.append(c); return c
@@ -251,7 +255,7 @@ class Project:
     def write_sheet(self, s):
         path="/%s/%s"%(self.root_uuid, s.inst_uuid)
         body=["(kicad_sch",'\t(version 20250114)','\t(generator "kisch")','\t(generator_version "10.0")',
-              '\t(uuid "%s")'%s.file_uuid,'\t(paper "A3")',
+              '\t(uuid "%s")'%s.file_uuid,'\t(paper "%s")'%s.paper,
               '\t(title_block\n\t\t(title "%s")\n\t\t(rev "0.1")\n\t)'%s.title,
               self._lib_symbols_block()]
         for t in s.texts: body.append(self._text_block(*t))
@@ -304,11 +308,15 @@ class Project:
                 if ':' in fp: fplibs.add(fp.split(':',1)[0])
         rows=[]
         for lib in sorted(fplibs):
-            rows.append('\t(lib (name "%s")(type "KiCad")(uri "%s/%s.pretty")(options "")(descr ""))'%(lib,FPDIR,lib))
+            if lib=="bridge":
+                uri="%s/footprints/bridge.pretty"%self.outdir
+            else:
+                uri="%s/%s.pretty"%(FPDIR,lib)
+            rows.append('\t(lib (name "%s")(type "KiCad")(uri "%s")(options "")(descr ""))'%(lib,uri))
         open(os.path.join(self.outdir,"fp-lib-table"),"w").write("(fp_lib_table\n\t(version 7)\n"+"\n".join(rows)+"\n)\n")
     def root_power(self, sym, at):
         self.use_symbol('power', sym)
-        pins=pins_of(self.lib('power'),sym); pinmap={p['number']:(p['x'],p['y']) for p in pins}
+        pins=pins_of(self.lib('power'),sym); pinmap={p['number']:(p['x'],p['y'],p['angle']) for p in pins}
         c=Comp("power:%s"%sym,_pwr_ref(),sym,at,pinmap); c.is_power=True
         self.root_powers.append(c); return c
 

@@ -6,7 +6,6 @@
 	(lib (name "Isolator")(type "KiCad")(uri "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Isolator.kicad_sym")(options "")(descr ""))
 	(lib (name "Power_Protection")(type "KiCad")(uri "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Power_Protection.kicad_sym")(options "")(descr ""))
 	(lib (name "RF_Module")(type "KiCad")(uri "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/RF_Module.kicad_sym")(options "")(descr ""))
-	(lib (name "Relay")(type "KiCad")(uri "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Relay.kicad_sym")(options "")(descr ""))
 	(lib (name "Switch")(type "KiCad")(uri "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Switch.kicad_sym")(options "")(descr ""))
 	(lib (name "Transistor_FET")(type "KiCad")(uri "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Transistor_FET.kicad_sym")(options "")(descr ""))
 	(lib (name "bridge")(type "KiCad")(uri "/Users/ivica/universal-esp32-bridge/bridge.kicad_sym")(options "")(descr ""))
