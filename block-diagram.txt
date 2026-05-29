@@ -1,0 +1,34 @@
+UNIVERSAL ESP32 BUTTON/SIGNAL BRIDGE — BLOCK DIAGRAM
+=====================================================
+LOW VOLTAGE ONLY — NOT FOR MAINS (230 V) SWITCHING
+
+                         ┌───────────────────────────────────────────────┐
+   USB-C  ──VBUS 5V────► │                                               │
+   (J1)   ──D+/D-──────► │  USBLC6-2SC6 ESD ──► GPIO20(D+)/GPIO19(D-)    │
+          ──CC1/CC2─5.1k │                                               │
+                         │                ESP32-S3-WROOM-1-N8 (U4)        │
+   EXT 5V ──┐            │   ┌─────────────────────────────────────────┐ │
+   (J2)     │            │   │ EN◄─10k/1µF/SW1(RESET)                   │ │
+            ▼            │   │ GPIO0◄─10k/0.1µF/SW2(BOOT)               │ │
+       Diode-OR (SS54)   │   │ 3V3 ◄── decoupling                       │ │
+       D1/D2 reverse-prt │   └─────────────────────────────────────────┘ │
+            │            └───┬───────┬───────┬───────┬────────┬──────────┘
+            ▼ 5V_RAIL(~4.6V) │       │       │       │        │
+     ┌──────┴──────┐         │       │       │       │        │ GPIO2
+     │ AMS1117-3.3 │         │IN1-8  │OUT1-8 │RLY1-2 │CAP1-4  │
+     │   (U3)      │         │       │       │       │        ▼
+     └──────┬──────┘         ▼       ▼       ▼       ▼     [LED1]
+            │ 3V3_RAIL  ┌─────────┐┌────────┐┌───────┐┌─────────┐ STATUS
+            ├──────────►│8× INPUT ││8× Photo││2× RELAY││4× CAP   │
+            │           │opto+CRD ││MOS dry ││MOSFET  ││inject   │
+            │           │3-24V DC ││contact ││+flyback││100k/470k│
+            │           │active-LO││≤60V/.5A││LV only ││/1M sel  │
+            │           └────┬────┘└───┬────┘└───┬───┘└────┬────┘
+            │                ▼         ▼         ▼         ▼
+            │           IN1..IN8   OUT1..OUT8  RLY1/2   CAP1..4
+            │           (+/- term) (A/B term) (C/NO/NC) (pad/term)
+            │
+            └─► 3V3 also feeds input pull-ups (10k) and PhotoMOS LED drive (330R)
+
+   TEST POINTS: 3V3, 5V, GND, IN1..IN8 (logic), OUT1..OUT8
+   ISOLATION GAP between field side (terminals/opto-PhotoMOS output/relay) and logic side.

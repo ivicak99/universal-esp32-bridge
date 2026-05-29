@@ -1,0 +1,47 @@
+Item,Qty,RefDes,Value/Part,Manufacturer Example,LCSC (VERIFY),Package,Notes
+1,1,U4,ESP32-S3-WROOM-1-N8,Espressif,verify,Module,8MB flash NO PSRAM (keeps GPIO35/36/37)
+2,1,U3,AMS1117-3.3,various,C6186,SOT-223,1A LDO 5V->3.3V
+3,1,U2,USBLC6-2SC6,STMicro,C7519,SOT-23-6,USB D+/D- ESD clamp
+4,1,J1,USB-C 16P TYPE-C-31-M-12,various,C165948,SMD,Power + native USB
+5,2,D1 D2,SS54,various,C22452,SMC,Schottky OR / reverse protect 5A
+6,8,U_IN1..U_IN8,EL357N(B),Everlight,C124981,SOP-4,Input optocoupler
+7,8,CRD1..CRD8,Constant-current diode ~2mA,e.g. 1N5305,verify,SOD/DO-35,Wide-range input current limit (see Warnings)
+8,8,R_lim1..8 (ALT),2.2k 1206,various,—,1206,Alt to CRD: fixed-R input limit (DNP if CRD used)
+9,8,D_rev1..8,1N4148WS,various,C2128,SOD-323,Input reverse clamp across opto LED
+10,8,TVS_IN1..8,SMAJ24A,various,verify,SMA,Optional input surge clamp (DNP)
+11,8,U_OUT1..8,AQY212GS,Panasonic,verify,DIP/SMD,PhotoMOS 60V/550mA/0.5ohm dry contact
+12,8,U_OUT1..8 (ALT),CPC1017N,IXYS/Clare,verify,SOP-4,Cheaper PhotoMOS alt 60V/100mA
+13,2,K1 K2,HK4100F-DC5V,HuiKe,C39562,THT,5V relay LV CONTACTS ONLY
+14,2,Q1 Q2,AO3400A,AOS,C20917,SOT-23,Logic-level N-MOSFET relay driver
+15,2,D_fb1 D_fb2,M7 / 1N4007,various,C95872,SMA,Relay coil flyback
+16,8,R_d1..8,330 0603,various,—,0603,PhotoMOS LED drive resistor
+17,8,R_pu1..8,10k 0603,various,—,0603,Input opto pull-up to 3V3
+18,8,R_f1..8,1k 0603,various,—,0603,Input RC filter series (DNP/0R default)
+19,8,C_f1..8,100nF 0603,various,—,0603,Input RC filter cap (DNP default)
+20,2,R_g1 R_g2,100 0603,various,—,0603,MOSFET gate resistor
+21,2,R_pd1 R_pd2,100k 0603,various,—,0603,MOSFET gate pulldown
+22,4,R_100k1..4,100k 0603,various,—,0603,Cap-inject select option
+23,4,R_470k1..4,470k 0603,various,—,0603,Cap-inject select option (default populate)
+24,4,R_1M1..4,1M 0603,various,—,0603,Cap-inject select option
+25,1,R3,10k 0603,various,—,0603,EN pull-up
+26,1,R4,10k 0603,various,—,0603,GPIO0/BOOT pull-up
+27,2,R1 R2,5.1k 0603,various,—,0603,USB-C CC Rd pulldowns
+28,1,R_led,1k 0603,various,—,0603,Status LED series
+29,1,LED1,LED green 0603,various,—,0603,Status LED on GPIO2
+30,1,C1,100uF 16V,various,—,1206/elec,5V bulk
+31,2,C3 C5,22uF 0805,various,—,0805,3V3 bulk near LDO/module
+32,1,C6,10uF 0603,various,—,0603,3V3 decoupling
+33,5,C2 C4 C7 C8b ...,0.1uF 0603,various,—,0603,Local decoupling
+34,1,C8,1uF 0603,various,—,0603,EN RC cap
+35,1,C9,0.1uF 0603,various,—,0603,BOOT cap
+36,2,SW1 SW2,6x3.5 SMD tact,various,C318884,SMD,RESET + BOOT buttons
+37,1,J2,Screw terminal 2P 3.5mm,various,—,THT,External 5V in
+38,8,IN1..IN8,Screw terminal 2P 3.5mm,various,—,THT,Isolated inputs
+39,8,OUT1..OUT8,Screw terminal 2P 3.5mm,various,—,THT,PhotoMOS outputs
+40,2,RLY1 RLY2,Screw terminal 3P 3.5mm,various,—,THT,Relay COM/NO/NC
+41,4,CAP1..CAP4,Screw terminal 2P 3.5mm,various,—,THT,Cap-inject outputs
+42,1,J3,Header 1x3 2.54,various,—,THT,UART0 debug
+43,1,J4,Header 1x5 2.54,various,—,THT,Spare GPIO expansion
+44,19,TP_*,Test pad 1.0mm,—,—,SMD,3V3/5V/GND/IN1-8/OUT1-8
+45,0,U5 (DNP),MCP23017,Microchip,verify,SOIC/SSOP-28,OPTIONAL I/O expander fallback - NOT fitted in V1 (direct GPIO default)
+46,0,R_i2c1 R_i2c2 (DNP),4.7k 0603,various,—,0603,I2C pull-ups - only if MCP23017 populated

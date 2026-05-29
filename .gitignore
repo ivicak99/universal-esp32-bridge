@@ -1,0 +1,18 @@
+# KiCad backups / auto-generated
+*-backups/
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+*.bak
+*~
+_autosave-*
+fp-info-cache
+
+# KiCad output / fabrication
+/gerbers/
+/production/
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db

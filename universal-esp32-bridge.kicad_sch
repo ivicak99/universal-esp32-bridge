@@ -1,0 +1,82 @@
+(kicad_sch
+	(version 20231120)
+	(generator "claude-design-skeleton")
+	(uuid "443923d0-f725-4167-bcb7-e84b4e13f126")
+	(paper "A3")
+	(title_block
+		(title "Universal ESP32 Button/Signal Bridge")
+		(date "2026-05-29")
+		(rev "0.1")
+		(company "Personal automation - LOW VOLTAGE ONLY, NOT FOR MAINS")
+		(comment 1 "MCU: ESP32-S3-WROOM-1-N8 (no PSRAM). 4-layer PCB. 0603 min passives.")
+		(comment 2 "8 isolated inputs (3-24V), 8 PhotoMOS dry-contact outputs, 2 relays, 4 cap-inject.")
+		(comment 3 "This is a STARTER sheet - place symbols and wire per DESIGN.md.")
+		(comment 4 "Net classes: Default / Power / Field_Isolated (1.5mm clearance) preset in project.")
+	)
+	(lib_symbols)
+	(text "UNIVERSAL ESP32 BUTTON / SIGNAL BRIDGE  -  STARTER SCHEMATIC\n(open DESIGN.md for full per-channel netlists, BOM.csv for parts)"
+		(exclude_from_sim no)
+		(at 20 15 0)
+		(effects
+			(font (size 2.5 2.5) (bold yes))
+			(justify left bottom)
+		)
+		(uuid "d36ab40c-817a-4678-b226-e5467f3096f8")
+	)
+	(text "!! LOW VOLTAGE ONLY  -  NOT FOR 230V MAINS SWITCHING  -  LV RELAY CONTACTS ONLY !!"
+		(exclude_from_sim no)
+		(at 20 25 0)
+		(effects
+			(font (size 2.0 2.0) (bold yes))
+			(justify left bottom)
+		)
+		(uuid "39581e19-8e91-486b-93be-62019b372cac")
+	)
+	(text "POWER\n- USB-C J1 VBUS --> SS54 D1 --> 5V_RAIL ; CC1/CC2 = 5.1k to GND\n- EXT 5V J2 --> SS54 D2 --> 5V_RAIL (diode-OR, reverse protect)\n- USBLC6 U2 on D+/D- --> GPIO20 / GPIO19 (native USB-Serial-JTAG)\n- AMS1117-3.3 U3: 5V_RAIL --> 3V3_RAIL ; 22u+0.1u in/out\n- Bulk: 100u on 5V ; 22u+10u+0.1u on 3V3 near module\n- Add PWR_FLAG on 5V_RAIL, 3V3_RAIL, GND for ERC"
+		(exclude_from_sim no)
+		(at 20 40 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000001")
+	)
+	(text "ESP32-S3-WROOM-1-N8 (U4)\n- EN: 10k PU + 1u + SW1(RESET) to GND\n- GPIO0/BOOT: 10k PU + 0.1u + SW2 to GND\n- USB D-=GPIO19  D+=GPIO20\n- UART0 debug J3: TXD=GPIO43 RXD=GPIO44 GND\n- Spare header J4: GPIO1,41,42,47,48\n- STRAPS: GPIO0=BOOT(used,10k PU); GPIO3/45/46=NC ; no channel on a strap\n- Status LED1: GPIO2 -> 1k -> LED -> GND\n- V1=DIRECT GPIO ; optional MCP23017 (U5,DNP) routing-relief fallback (see DESIGN.md 2.2)"
+		(exclude_from_sim no)
+		(at 120 40 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000002")
+	)
+	(text "ISOLATED INPUTS  x8  (IN1..IN8)  GPIO 4,5,6,7,15,16,17,18\nPer channel:\n  IN+ -> CRD ~2mA -> opto LED (EL357N) -> IN-\n  1N4148WS anti-parallel across opto LED\n  (ALT: 2.2k 1206 instead of CRD - footprint provided)\n  opto collector -> 10k PU to 3V3 = INx_LOGIC ; emitter -> GND\n  RC filter (1k + 100nF, DNP) -> GPIO\n  ACTIVE LOW (invert in firmware) ; TP on logic node\n  optional TVS SMAJ24A across IN+/IN- (DNP)"
+		(exclude_from_sim no)
+		(at 20 80 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000003")
+	)
+	(text "PHOTOMOS OUTPUTS  x8  (OUT1..OUT8)  GPIO 8,9,10,11,12,13,14,21\nPer channel:\n  GPIO -> 330R -> PhotoMOS LED (AQY212GS) -> GND  (~6.4mA)\n  PhotoMOS load pins -> screw terminal A/B (isolated dry contact)\n  bidirectional, no polarity ; HIGH = closed\n  optional series 0R/fuse + snubber footprints (DNP)\n  TP on OUTx_A\n  ALT part: CPC1017N (60V/100mA)"
+		(exclude_from_sim no)
+		(at 120 80 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000004")
+	)
+	(text "RELAYS  x2  (RLY1/RLY2)  GPIO 35,36\nPer channel:\n  GPIO -> 100R -> gate AO3400A ; 100k gate->GND pulldown\n  source->GND ; drain->coil(-) ; coil(+)->5V_RAIL\n  M7/1N4007 flyback across coil (cathode to 5V)\n  contacts COM/NO/NC -> 3P screw terminal\n  K1/K2 = HK4100F-DC5V  LV CONTACTS ONLY\n  optional RC snubber across contacts (DNP)"
+		(exclude_from_sim no)
+		(at 20 125 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000005")
+	)
+	(text "CAP INJECTION  x4  (CAP1..CAP4)  GPIO 37,38,39,40\nPer channel:\n  GPIO -> [100k | 470k | 1M] parallel 0603 footprints -> CAPx_OUT\n  populate ONE (default 470k) or select via solder jumper\n  CAPx_OUT -> 2-pin terminal/pad to external touch pad\n  optional series C + ESD footprints (DNP)\n  TP on CAPx_OUT"
+		(exclude_from_sim no)
+		(at 120 125 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000006")
+	)
+	(text "LAYOUT / DRC REMINDERS\n- Keep >=1.5mm isolation gap (route a slot) between FIELD side\n  (terminals / opto+PhotoMOS output / relay contacts) and LOGIC side.\n- Do NOT pour logic GND under field-side terminals.\n- Antenna keep-out under WROOM-1 (no copper/plane).\n- Decoupling within mm of module 3V3 ; copper pour on AMS1117 tab.\n- USB D+/- short loose diff pair, USBLC6 at connector.\n- Power/coil traces (<=0.5A) >= 0.4mm."
+		(exclude_from_sim no)
+		(at 20 165 0)
+		(effects (font (size 1.4 1.4)) (justify left top))
+		(uuid "11111111-0001-0001-0001-000000000007")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
